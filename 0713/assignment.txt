@@ -1,0 +1,7 @@
+Q1 "잘가요!" 를 UTF8 로 인코딩하세요.
+A1
+
+Q2 int 배열 str을 선언하고 어떤 값으로 초기화 합니다.
+str을 printf("%s", str); 과 같이 출력하세요.
+"Hello World\n"가 출력되어야합니다.
+assignment.c 파일에 작성해서 제출합니다.
