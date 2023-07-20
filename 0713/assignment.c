@@ -15,9 +15,7 @@ assignment.c 파일에 작성해서 제출합니다.
 
 int main(void)
 {
-    
-    char str[12] = "Hello World";
-    printf("%s\n", str);
-
-    return 0;
+	int str[] = { 1819043144, 1870078063 , 6581362 };
+	printf("%s\n", str);
+	return 0;
 }
