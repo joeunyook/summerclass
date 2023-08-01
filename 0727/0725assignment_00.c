@@ -12,11 +12,8 @@
 #include <stdio.h>
 int main(void)
 {   
-    char move[] = "www";
-    int w = 0;
-    int a = 1;
-    int s = 2;
-    int d = 3;
+    char move[] = "wwassdda";
+    
     int x = 2;
     int y = 2;
     for(int i =0; move[i]!= '\0';i++)
@@ -31,17 +28,29 @@ int main(void)
     
         switch(movement)
         {
-            case 0 : 
-                y -=1;
+            case 'w' : 
+            if(y>=0 && y<=5)
+                {
+                    y -=1;
+                }
                 break;
-            case 1 : 
-                x -=1;
+            case 'a' : 
+            if (x>=0 && x<=5)
+                {
+                    x -=1;
+                }
                 break;
-            case 2 :
-                y+=1;
+            case 's' :
+            if (y>=0 && y<=5)
+                {
+                    y+=1;
+                }
                 break;
-            case 3 :
-                x+=1;
+            case 'd' :
+            if (x>=0 && x<=5)
+                {
+                    x+=1;
+                }
                 break;
         }
     }
@@ -50,7 +59,7 @@ int main(void)
     {
         for (int k =0; k<5; k++)
         {
-            if (j == x && k == y)
+            if (j == y && k == x)
             {
                 printf("P");
             }
