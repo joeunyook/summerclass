@@ -1,0 +1,40 @@
+Q00
+인자로 전달 된 c가 ASCII 코드로 알파벳을 나타내면 1, 아니면 0을 반환하는 함수를 작성하세요.
+함수 원형은 아래와 같습니다.
+
+int is_alphabet(char c)
+
+Q01
+인자로 전달 된 c가 ASCII 코드로 숫자를 나타내면 1, 아니면 0을 반환하는 함수를 작성하세요.
+함수 원형은 아래와 같습니다.
+
+int is_digit(char c)
+
+Q02
+인자로 전달된 c가 ASCII 코드로 공백 문자를 나타내면 1, 아니면 0을 반환하는 함수를 작성하세요.
+(공백 문자에 대해서는 https://learn.microsoft.com/en-us/cpp/c-language/white-space-characters?view=msvc-170 와 man ascii 를 참고하세요)
+함수 원형은 아래와 같습니다.
+
+int is_space(char c)
+
+Q03
+인자로 전달된 문자열 str의 길이를 반환하는 함수를 작성하세요.
+str의 원본이 손상되어서는 안 됩니다.
+함수 원형은 아래와 같습니다.
+
+size_t get_len(const char str[])
+
+Q04
+인자로 전달된 두 문자열 str1, str2가 같으면 1, 다르면 0을 반환하는 함수를 작성하세요.
+원본이 손상되어서는 안됩니다.
+함수 원형은 아래와 같습니다.
+
+int is_equal(const char str1[], const char str2[])
+
+Q05
+인자로 전달된 문자열 src를 dst에 복사하는 함수를 작성하세요.
+단 dst의 크기는 언제나 src 이상임을 보장합니다.
+src의 원본이 손상되어서는 안됩니다.
+함수 원형은 아래와 같습니다.
+
+void copy(char dst[], const char src[], size_t len)
