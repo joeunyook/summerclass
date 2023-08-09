@@ -8,4 +8,4 @@ typedef struct {
 
 ratio_t multiply(ratio_t a, ratio_t b);
 
-#endif // ASSIGNMENT_02_H
+#endif 
