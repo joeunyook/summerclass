@@ -26,14 +26,15 @@ ratio_t multiply(ratio_t a, ratio_t b)
  
     int a_initial = result.numerator;
     int b_initial = result.denominator;
+    int instant_num;
     
     while (b_initial != 0)
     {
-    
+        instant_num = b_initial;
         b_initial = a_initial % b_initial;
-        a_initial = 
+        a_initial = instant_num;
     }
-    int common_denominator  ;
+    int common_denominator = a_initial;
 
    
     result.numerator /= common_denominator;
@@ -48,6 +49,6 @@ int main()
     ratio_t b = {3, 5};
     ratio_t result = multiply(a, b);
     
-    printf("Result: %d/%d\n", result.numerator, result.denominator);
+    printf("%d/%d\n", result.numerator, result.denominator);
     return 0;
 }
