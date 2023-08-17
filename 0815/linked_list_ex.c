@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct st_list_node
 {
@@ -14,7 +15,10 @@ void insert_front(list_node_t** head, int item)
 	new->prev = NULL;
 	new->next = *head;
 	*head = new;
-	new->next->prev = new;
+	if (new->next != NULL)
+	{
+		(*(new->next)).prev = new;
+	}
 	return;
 }
 
@@ -23,4 +27,20 @@ int main(void)
 	list_node_t* head = NULL;
 	insert_front(&head, 42);
 	insert_front(&head, 33);
+
+	list_node_t* node = head;
+	while (node != NULL)
+	{
+		printf("%d\n", node->item);
+		node = node->next;
+	}
+
+	node = head;
+	while (node != NULL)
+	{
+		list_node_t* temp = node;
+		node = node->next;
+		free(temp);
+	}
+	return 0;
 }
