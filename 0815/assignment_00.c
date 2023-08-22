@@ -35,11 +35,33 @@ list_node_t* list_find(list_node_t** head, const void* cmp_addr, size_t cmp_size
     list_node_t* current = *head;
     while(current != NULL)
     {
-        if(memcmp(current -> data, cmp_addr, cmp_size)) == 0  
+        if(memcmp(current -> data, cmp_addr, cmp_size) == 0 
         {
             return current;
         }
         current = current -> next;
     }
 
+}
+
+void list_remove(list_node_t** head, const void* cmp_addr, size_t cmp_size) 
+{
+    list_node_t* current = *head;
+    list_node_t* prev = NULL;
+
+
+
+            if (prev)
+            {
+                prev->next = current->next;
+            } 
+            else 
+            {
+                
+                *head = current->next;
+            }
+
+            
+            
+    }
 }
