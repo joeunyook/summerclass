@@ -20,12 +20,13 @@ list_node_t* list_find(list_node_t** head, const void* cmp_addr, size_t cmp_size
 
 void list_remove(list_node_t** head, const void* cmp_addr, size_t cmp_size)*/
 
-#include "assignment_00-1.h"
+#include "assignment_00.h"
+#include <string.h>
 
 void list_add_front(list_node_t** head, const void* item)
 {
     list_node_t* new = (list_node_t*)malloc(sizeof(list_node_t));
-    new -> data = item;
+    new -> item = item;
     new -> next = *head;
     *head = new;
 }
@@ -35,33 +36,31 @@ list_node_t* list_find(list_node_t** head, const void* cmp_addr, size_t cmp_size
     list_node_t* current = *head;
     while(current != NULL)
     {
-        if(memcmp(current -> data, cmp_addr, cmp_size) == 0 
+        if(memcmp(current -> item, cmp_addr, cmp_size) == 0 )
         {
             return current;
         }
         current = current -> next;
     }
+    return NULL;
 
 }
 
 void list_remove(list_node_t** head, const void* cmp_addr, size_t cmp_size) 
 {
-    list_node_t* current = *head;
-    list_node_t* prev = NULL;
-
-
-
-            if (prev)
-            {
-                prev->next = current->next;
-            } 
-            else 
-            {
-                
-                *head = current->next;
-            }
-
-            
-            
+    list_node_t** Node = head;
+    while(*Node != NULL)
+    {
+        if (memcmp(&((**Node).item),cmp_addr, cmp_size) == 0)
+        {
+            list_node_t* temp = *Node; 
+            *Node = (*Node)->next;
+            free(temp -> item);
+            free(temp);
+            return;
+        }
+        Node = &((**Node).next);
     }
+
+
 }
